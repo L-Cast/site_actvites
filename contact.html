@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Léa Castagnetti pour vos besoins en formation, IA, Excel, Power BI ou accompagnement data.">
+  <title>Contact | Léa Castagnetti</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brick: '#9C4A4A',
+            coral: '#FF7F50',
+            beige: '#F5F5DC',
+            softgreen: '#C1D7AE',
+            darkgreen: '#4A6B3D',
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-sans text-gray-800 bg-beige">
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-xl md:text-2xl font-bold text-brick">Léa Castagnetti</h1>
+                <p class="text-xs md:text-sm text-coral italic">IA, Data & Outils digitaux – Formations et solutions sur mesure</p>
+            </div>
+            <nav class="space-x-6 hidden md:block">
+      <a href="/index.html" class="text-brick hover:text-coral">Accueil</a>
+      <a href="/a-propos.html" class="text-brick hover:text-coral">À propos</a>
+      <a href="/ecoles.html" class="text-brick hover:text-coral">Écoles</a>
+      <a href="/entreprises.html" class="text-brick hover:text-coral">Entreprises</a>
+      <a href="/contact.html" class="text-brick hover:text-coral">Contact</a>
+    </nav>
+    <!-- Menu burger -->
+    <button id="menu-toggle" class="md:hidden text-brick">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+        </div>
+    </header>
+
+<!-- Menu mobile -->
+<div id="mobile-menu" class="hidden fixed inset-0 bg-brick bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-white text-xl">
+  <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl">
+    <i class="fas fa-times"></i>
+  </button>
+  <a href="/index.html" class="hover:text-coral">Accueil</a>
+  <a href="/a-propos.html" class="hover:text-coral">À propos</a>
+  <a href="/ecoles.html" class="hover:text-coral">Écoles</a>
+  <a href="/entreprises.html" class="hover:text-coral">Entreprises</a>
+  <a href="/contact.html" class="hover:text-coral">Contact</a>
+</div>
+
+
+  <!-- Hero -->
+  <section class="bg-white py-20 px-6 md:px-12 text-center">
+    <h2 class="text-4xl font-bold text-brick mb-4">Contactez-moi</h2>
+    <p class="text-lg text-gray-700">Besoin d'une formation, d'un accompagnement sur-mesure ou d’un simple échange ? Je suis à votre écoute.</p>
+  </section>
+
+  <!-- Formulaire de contact -->
+  <section class="py-16 px-6 md:px-12">
+    <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow">
+      <form>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+            <input type="text" id="name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-coral" required>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" id="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-coral" required>
+          </div>
+        </div>
+        <div class="mb-6">
+          <label for="type" class="block text-sm font-medium text-gray-700 mb-1">Vous êtes</label>
+          <select id="type" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-coral">
+            <option value="">-- Sélectionnez --</option>
+            <option value="ecole">Une école</option>
+            <option value="entreprise">Une entreprise</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="mb-6">
+          <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+          <textarea id="message" rows="5" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-coral" required></textarea>
+        </div>
+        <button type="submit" class="bg-coral hover:bg-brick text-white font-semibold px-6 py-3 rounded-lg shadow transition w-full md:w-auto">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-darkgreen text-white py-12 px-6 md:px-12">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+      <div>
+        <h4 class="text-lg font-bold text-coral mb-2">Léa Castagnetti</h4>
+        <p>Formatrice & consultante en IA, data science et outils digitaux</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold text-coral mb-2">Contact direct</h4>
+        <p>Email : <a href="mailto:contact@leacastagnetti.com" class="underline">contact@leacastagnetti.com</a></p>
+        <p>Tél : +33 6 12 34 56 78</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold text-coral mb-2">Basée en</h4>
+        <p>Île-de-France, interventions en France entière</p>
+      </div>
+    </div>
+    <div class="text-center mt-12 text-sm">&copy; 2025 Léa Castagnetti. Tous droits réservés.</div>
+  </footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const close = document.getElementById('close-menu');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+
+  close.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  });
+
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    });
+  });
+</script>
+
+</body>
+</html>
