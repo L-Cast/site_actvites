@@ -28,45 +28,75 @@
   </script>
 </head>
 <body class="font-sans text-gray-800 bg-beige">
+  <!-- Header -->
   <header class="sticky top-0 z-50 bg-white shadow-sm">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div>
-                <h1 class="text-xl md:text-2xl font-bold text-brick">Léa Castagnetti</h1>
-                <p class="text-xs md:text-sm text-coral italic">IA, Data & Outils digitaux – Formations et solutions sur mesure</p>
-            </div>
-            <nav class="space-x-6 hidden md:block">
-      <a href="/site_actvites/index.html" class="text-brick hover:text-coral">Accueil</a>
-      <a href="/site_actvites/a-propos.html" class="text-brick hover:text-coral">À propos</a>
-      <a href="/site_actvites/ecoles.html" class="text-brick hover:text-coral">Écoles</a>
-      <a href="/site_actvites/entreprises.html" class="text-brick hover:text-coral">Entreprises</a>
-      <a href="/site_actvites/contact.html" class="text-brick hover:text-coral">Contact</a>
-    </nav>
-    <!-- Menu burger -->
-    <button id="menu-toggle" class="md:hidden text-brick">
-      <i class="fas fa-bars text-2xl"></i>
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div>
+        <h1 class="text-xl md:text-2xl font-bold text-brick">Léa Castagnetti</h1>
+        <p class="text-xs md:text-sm text-coral italic">IA, Data & Outils digitaux – Formations et solutions sur mesure</p>
+      </div>
+      <nav class="space-x-6 hidden md:block">
+        <a href="/site_actvites/index.html" class="text-brick hover:text-coral">Accueil</a>
+        <a href="/site_actvites/a-propos.html" class="text-brick hover:text-coral">À propos</a>
+        <a href="/site_actvites/ecoles.html" class="text-brick hover:text-coral">Écoles</a>
+        <a href="/site_actvites/entreprises.html" class="text-brick hover:text-coral">Entreprises</a>
+        <a href="/site_actvites/contact.html" class="text-brick hover:text-coral">Contact</a>
+      </nav>
+      <!-- Menu burger -->
+      <button id="menu-toggle" class="md:hidden text-brick">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-brick bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-white text-xl">
+    <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl">
+      <i class="fas fa-times"></i>
     </button>
-        </div>
-    </header>
+    <a href="/site_actvites/index.html" class="hover:text-coral">Accueil</a>
+    <a href="/site_actvites/a-propos.html" class="hover:text-coral">À propos</a>
+    <a href="/site_actvites/ecoles.html" class="hover:text-coral">Écoles</a>
+    <a href="/site_actvites/entreprises.html" class="hover:text-coral">Entreprises</a>
+    <a href="/site_actvites/contact.html" class="hover:text-coral">Contact</a>
+  </div>
 
-
-<!-- Menu mobile -->
-<div id="mobile-menu" class="hidden fixed inset-0 bg-brick bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-white text-xl">
-  <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl">
-    <i class="fas fa-times"></i>
-  </button>
-  <a href="/site_actvites/index.html" class="hover:text-coral">Accueil</a>
-  <a href="/site_actvites/a-propos.html" class="hover:text-coral">À propos</a>
-  <a href="/site_actvites/ecoles.html" class="hover:text-coral">Écoles</a>
-  <a href="/site_actvites/entreprises.html" class="hover:text-coral">Entreprises</a>
-  <a href="/site_actvites/contact.html" class="hover:text-coral">Contact</a>
-</div>
-
-
-  <!-- Hero -->
+  <!-- Hero modifié -->
   <section class="bg-white py-20 px-6 md:px-12">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-4xl font-bold text-brick mb-6">Des solutions concrètes pour booster votre performance</h2>
-      <p class="text-lg text-gray-700">Formations, automatisation et outils de pilotage sur mesure pour entreprises. IA, Excel, Power BI et plus.</p>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="text-center md:text-left">
+        <h2 class="text-4xl font-bold text-brick mb-6 leading-tight">
+          Boostez vos performances grâce aux solutions IA & Data
+        </h2>
+        <p class="text-lg text-gray-700 mb-6">
+          Je vous accompagne dans l’optimisation de vos process, l’automatisation de vos outils et l’intégration de l’intelligence artificielle adaptée à vos besoins stratégiques.
+        </p>
+        <a href="/site_actvites/contact.html" class="inline-block bg-coral hover:bg-brick text-white font-semibold py-3 px-8 rounded-full transition">
+          <i class="fas fa-envelope mr-2"></i> Contactez-moi
+        </a>
+      </div>
+      <div class="bg-white p-8 rounded-lg shadow-lg relative overflow-hidden">
+        <div class="flex justify-center space-x-6 mb-6">
+          <div class="bg-beige p-4 rounded-lg">
+            <i class="fas fa-robot text-brick text-4xl"></i>
+          </div>
+          <div class="bg-softgreen p-4 rounded-lg">
+            <i class="fas fa-file-excel text-brick text-4xl"></i>
+          </div>
+          <div class="bg-beige p-4 rounded-lg">
+            <i class="fas fa-chart-line text-brick text-4xl"></i>
+          </div>
+          <div class="bg-beige p-4 rounded-lg">
+            <i class="fas fa-lightbulb text-brick text-4xl"></i>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-brick mb-2">Des solutions pragmatiques et efficaces</h3>
+        <p class="text-gray-700 text-md">
+          Formations, automatisations et outils d’aide à la décision pour soutenir votre croissance.
+        </p>
+        <div class="absolute w-32 h-32 bg-softgreen opacity-30 rounded-lg -top-10 -left-10"></div>
+        <div class="absolute w-32 h-32 bg-coral opacity-30 rounded-lg -bottom-10 -right-10"></div>
+      </div>
     </div>
   </section>
 
@@ -134,14 +164,6 @@
     </div>
   </section>
 
-  <!-- CTA Contact -->
-  <section class="py-16 bg-brick text-white px-6 md:px-12 text-center">
-    <h3 class="text-3xl font-bold mb-4">Vous avez un besoin spécifique ?</h3>
-    <p class="mb-6">Discutons ensemble de vos objectifs et je vous proposerai une solution sur mesure.</p>
-    <a href="/" class="inline-block bg-white text-brick font-semibold py-3 px-6 rounded-lg shadow hover:bg-coral hover:text-white transition">Retour à l’accueil</a>
-    <a href="#contact" class="ml-4 inline-block border border-white py-3 px-6 rounded-lg hover:bg-white hover:text-brick transition">Me contacter</a>
-  </section>
-
   <!-- Footer -->
   <footer id="contact" class="bg-darkgreen text-white py-12 px-6 md:px-12">
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
@@ -162,28 +184,29 @@
     <div class="text-center mt-12 text-sm">&copy; 2025 Léa Castagnetti. Tous droits réservés.</div>
   </footer>
 
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const close = document.getElementById('close-menu');
-  const menu = document.getElementById('mobile-menu');
+  <!-- Script menu mobile -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const close = document.getElementById('close-menu');
+    const menu = document.getElementById('mobile-menu');
 
-  toggle.addEventListener('click', () => {
-    menu.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  });
+    toggle.addEventListener('click', () => {
+      menu.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
 
-  close.addEventListener('click', () => {
-    menu.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  });
-
-  document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
+    close.addEventListener('click', () => {
       menu.classList.add('hidden');
       document.body.style.overflow = 'auto';
     });
-  });
-</script>
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      });
+    });
+  </script>
 
 </body>
 </html>
