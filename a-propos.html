@@ -8,6 +8,33 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    details summary {
+      list-style: none;
+    }
+
+    details[open] summary::after {
+      transform: rotate(90deg);
+    }
+
+    details summary::after {
+      content: "›";
+      float: right;
+      transition: transform 0.3s ease;
+    }
+
+    details > p {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.3s ease;
+      padding-top: 0;
+    }
+
+    details[open] > p {
+      max-height: 500px;
+      padding-top: 0.5rem;
+    }
+  </style>
   <script>
     tailwind.config = {
       theme: {
@@ -28,28 +55,26 @@
   </script>
 </head>
 <body class="font-sans text-gray-800 bg-beige">
-  <header class="sticky top-0 z-50 bg-white shadow-sm">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div>
-                <h1 class="text-xl md:text-2xl font-bold text-brick">Léa Castagnetti</h1>
-                <p class="text-xs md:text-sm text-coral italic">IA, Data & Outils digitaux – Formations et solutions sur mesure</p>
-            </div>
-            <nav class="space-x-6 hidden md:block">
+
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div>
+      <h1 class="text-xl md:text-2xl font-bold text-brick">Léa Castagnetti</h1>
+      <p class="text-xs md:text-sm text-coral italic">IA, Data & Outils digitaux – Formations et solutions sur mesure</p>
+    </div>
+    <nav class="space-x-6 hidden md:block">
       <a href="/site_actvites/index.html" class="text-brick hover:text-coral">Accueil</a>
       <a href="/site_actvites/a-propos.html" class="text-brick hover:text-coral">À propos</a>
       <a href="/site_actvites/ecoles.html" class="text-brick hover:text-coral">Écoles</a>
       <a href="/site_actvites/entreprises.html" class="text-brick hover:text-coral">Entreprises</a>
       <a href="/site_actvites/contact.html" class="text-brick hover:text-coral">Contact</a>
     </nav>
-    <!-- Menu burger -->
     <button id="menu-toggle" class="md:hidden text-brick">
       <i class="fas fa-bars text-2xl"></i>
     </button>
-        </div>
-    </header>
+  </div>
+</header>
 
-
-<!-- Menu mobile -->
 <div id="mobile-menu" class="hidden fixed inset-0 bg-brick bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-white text-xl">
   <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl">
     <i class="fas fa-times"></i>
@@ -61,77 +86,112 @@
   <a href="/site_actvites/contact.html" class="hover:text-coral">Contact</a>
 </div>
 
-
-  <!-- À propos Hero -->
-  <section class="bg-white py-20 px-6 md:px-12">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl font-bold text-brick mb-6">À propos de moi</h2>
+<!-- À propos Hero avec image -->
+<section class="bg-white py-20 px-6 md:px-12">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
+    <img src="/chemin/vers/ta-photo.jpg" alt="Portrait Léa Castagnetti" class="w-48 h-48 object-cover rounded-full shadow-md">
+    <div>
+      <h2 class="text-4xl font-bold text-brick mb-4">À propos de moi</h2>
       <p class="text-lg text-gray-700">Mon parcours au service de vos projets data et IA</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Mon parcours -->
-  <section class="py-16 bg-beige px-6 md:px-12">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-      <div>
-        <h3 class="text-3xl font-bold text-brick mb-4">Mon parcours</h3>
-        <ul class="space-y-6 text-gray-700">
-          <li><strong>Formation :</strong> Mastère Data Scientist à l'IA School</li>
-          <li><strong>Alternance :</strong> Data Manager chez Safran</li>
-          <li><strong>Expérience :</strong> Data Analyst chez Ebiquity (modélisation marketing - MMM)</li>
-          <li><strong>Start-up :</strong> Data Scientist chez Youmean, spécialisée en NLP</li>
-          <li><strong>Consulting :</strong> Chef de projet IA chez Groupe Rouge Vif (communication publique)</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-3xl font-bold text-brick mb-4">Ce que je propose aujourd'hui</h3>
-        <p class="mb-4">J’interviens auprès des écoles et des entreprises pour transmettre des compétences concrètes, utiles et stratégiques :</p>
-        <ul class="list-disc list-inside space-y-2">
-          <li>Formations Python, IA, SQL, Excel et Power BI</li>
-          <li>Accompagnement en IA appliquée (RH, stratégie, communication)</li>
-          <li>Création d’outils sur mesure (automatisations, dashboards, visualisation)</li>
-          <li>Conseil et structuration de projets data</li>
-        </ul>
-      </div>
+<!-- Mon parcours -->
+<section class="py-16 bg-beige px-6 md:px-12">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+    <div>
+      <h3 class="text-3xl font-bold text-brick mb-4">Mon parcours</h3>
+      <ul class="space-y-6 text-gray-700">
+        <li><strong>Formation :</strong> Mastère Data Scientist à l'IA School</li>
+        <li><strong>Alternance :</strong> Data Manager chez Safran</li>
+        <li><strong>Expérience :</strong> Data Analyst chez Ebiquity (modélisation marketing - MMM)</li>
+        <li><strong>Start-up :</strong> Data Scientist chez Youmean, spécialisée en NLP</li>
+        <li><strong>Consulting :</strong> Chef de projet IA chez Groupe Rouge Vif (communication publique)</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- Citation / approche -->
-  <section class="py-16 bg-softgreen px-6 md:px-12">
-    <div class="max-w-3xl mx-auto text-center">
-      <blockquote class="italic text-lg text-gray-800">
-        "Rendre les outils puissants accessibles et les données intelligibles — c’est ce qui m’anime dans chaque mission."
-      </blockquote>
-      <p class="mt-4 font-semibold text-brick">— Léa Castagnetti</p>
+    <div>
+      <h3 class="text-3xl font-bold text-brick mb-4">Ce que je propose aujourd'hui</h3>
+      <p class="mb-4">J’interviens auprès des écoles et des entreprises pour transmettre des compétences concrètes, utiles et stratégiques :</p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Formations Python, IA, SQL, Excel et Power BI</li>
+        <li>Accompagnement en IA appliquée (RH, stratégie, communication)</li>
+        <li>Création d’outils sur mesure (automatisations, dashboards, visualisation)</li>
+        <li>Conseil et structuration de projets data</li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA Contact -->
-  <section class="py-16 bg-brick text-white px-6 md:px-12 text-center">
-    <h3 class="text-3xl font-bold mb-4">Discutons de vos projets</h3>
-    <p class="mb-6">Que ce soit pour enseigner, former ou structurer une stratégie IA : je suis là pour vous accompagner.</p>
-    <a href="#contact" class="inline-block bg-white text-brick font-semibold py-3 px-6 rounded-lg shadow hover:bg-coral hover:text-white transition">Me contacter</a>
-  </section>
-
-  <!-- Footer -->
-  <footer id="contact" class="bg-darkgreen text-white py-12 px-6 md:px-12">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
-      <div>
-        <h4 class="text-lg font-bold text-coral mb-2">Léa Castagnetti</h4>
-        <p>Formatrice & consultante en IA, data science et outils digitaux</p>
-      </div>
-      <div>
-        <h4 class="text-lg font-bold text-coral mb-2">Contact</h4>
-        <p>Email : <a href="mailto:lea.castagnetti.pro@gmail.com" class="underline">lea.castagnetti.pro@gmail.com</a></p>
-        <p>Tél : +33 6 50 97 59 38</p>
-      </div>
-      <div>
-        <h4 class="text-lg font-bold text-coral mb-2">Localisation</h4>
-        <p>Basée en Île-de-France, interventions partout en France</p>
-      </div>
+<!-- Expériences - textes déroulants -->
+<section class="py-16 bg-white px-6 md:px-12">
+  <div class="max-w-6xl mx-auto">
+    <h3 class="text-3xl font-bold text-brick mb-8">Ce que j'ai appris de mes expériences</h3>
+    <div class="space-y-4">
+      <details class="bg-beige p-4 border-2 border-brick rounded-lg cursor-pointer">
+        <summary class="font-semibold text-lg text-brick">Safran – Data Manager</summary>
+        <p>
+          Structuration de pipelines de données RH, automatisation de tableaux de bord, gestion de livrables utiles aux équipes RH. Une école de rigueur et d’industrialisation de projets data.
+        </p>
+      </details>
+      <details class="bg-beige p-4 border-2 border-brick rounded-lg cursor-pointer">
+        <summary class="font-semibold text-lg text-brick">Ebiquity – Data Analyst (MMM)</summary>
+        <p>
+          Analyse de la performance média, modélisation statistique (régressions, ROI), synthèse de recommandations stratégiques pour directions marketing. J’y ai appris à relier chiffres et décisions.
+        </p>
+      </details>
+      <details class="bg-beige p-4 border-2 border-brick rounded-lg cursor-pointer">
+        <summary class="font-semibold text-lg text-brick">Youmean – Data Scientist (NLP)</summary>
+        <p>
+          Traitement de langage naturel (NLP), analyse de sentiments, classification de verbatims. Une belle expérience technique et agile, utile pour des projets RH ou de veille.
+        </p>
+      </details>
+      <details class="bg-beige p-4 border-2 border-brick rounded-lg cursor-pointer">
+        <summary class="font-semibold text-lg text-brick">Groupe Rouge Vif – Cheffe de projet IA</summary>
+        <p>
+          Conseil, gestion de projets IA, acculturation auprès de décideurs publics. Une mission de vulgarisation, de pédagogie et d’organisation, au cœur des enjeux actuels.
+        </p>
+      </details>
     </div>
-    <div class="text-center mt-12 text-sm">&copy; 2025 Léa Castagnetti. Tous droits réservés.</div>
-  </footer>
+  </div>
+</section>
+
+<!-- Citation -->
+<section class="py-16 bg-softgreen px-6 md:px-12">
+  <div class="max-w-3xl mx-auto text-center">
+    <blockquote class="italic text-lg text-gray-800">
+      "Rendre les outils puissants accessibles et les données intelligibles — c’est ce qui m’anime dans chaque mission."
+    </blockquote>
+    <p class="mt-4 font-semibold text-brick">— Léa Castagnetti</p>
+  </div>
+</section>
+
+<!-- CTA Contact -->
+<section class="py-16 bg-brick text-white px-6 md:px-12 text-center">
+  <h3 class="text-3xl font-bold mb-4">Discutons de vos projets</h3>
+  <p class="mb-6">Que ce soit pour enseigner, former ou structurer une stratégie IA : je suis là pour vous accompagner.</p>
+  <a href="#contact" class="inline-block bg-white text-brick font-semibold py-3 px-6 rounded-lg shadow hover:bg-coral hover:text-white transition">Me contacter</a>
+</section>
+
+<!-- Footer -->
+<footer id="contact" class="bg-darkgreen text-white py-12 px-6 md:px-12">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+    <div>
+      <h4 class="text-lg font-bold text-coral mb-2">Léa Castagnetti</h4>
+      <p>Formatrice & consultante en IA, data science et outils digitaux</p>
+    </div>
+    <div>
+      <h4 class="text-lg font-bold text-coral mb-2">Contact</h4>
+      <p>Email : <a href="mailto:lea.castagnetti.pro@gmail.com" class="underline">lea.castagnetti.pro@gmail.com</a></p>
+      <p>Tél : +33 6 50 97 59 38</p>
+    </div>
+    <div>
+      <h4 class="text-lg font-bold text-coral mb-2">Localisation</h4>
+      <p>Basée en Île-de-France, interventions partout en France</p>
+    </div>
+  </div>
+  <div class="text-center mt-12 text-sm">&copy; 2025 Léa Castagnetti. Tous droits réservés.</div>
+</footer>
 
 <script>
   const toggle = document.getElementById('menu-toggle');
